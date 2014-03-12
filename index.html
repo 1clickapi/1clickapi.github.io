@@ -34,11 +34,13 @@
       <section>
 
 
- <h3>
- <a name="welcome-to-1clickapi" class="anchor" href="#welcome-to-1clickapi"><span class="octicon octicon-link"></span></a>Welcome to 1Click.io API Documentation.</h3>
+ <h1>
+ <a name="welcome-to-1clickapi" class="anchor" href="#welcome-to-1clickapi"><span class="octicon octicon-link"></span></a>Welcome to 1Click.io API Documentation.</h1>
 
 <p>Easy steps to manage conferences using API and integrate our javascript in your website:
 </p>
+
+<h2> Step 1: </h2>
 
 <h4> <a name="js-snippet" class="anchor" href="#js-snippet"><span class="octicon octicon-link"></span></a>Javascript to be embedded in your workflow or website </h4>
 
@@ -49,8 +51,8 @@
   &lt;script src="http://1click.io/static/js/adapter.js" type="text/javascript" &gt; &lt;/script &gt; 
   &lt;script src="http://1click.io/static/js/oks.js" type="text/javascript" &gt; &lt;/script &gt; 
   &lt;script &gt; 
-    //The virtual room. This room should be allocated using the REST API documented below 
-    var identity = "your_virtual_room";  
+    //The virtual room title. This room is allocated using the REST API documented below.
+    var identity = "virtual_room_title";  
   &lt;/script &gt; 
 </code>
 </pre>
@@ -64,16 +66,16 @@
    &lt;video id="remoteView" autoplay&gt; &lt;/video&gt; 
    &lt;button onclick="video_call();"&gt;Start Call&lt;/button&gt; 
    &lt;button onclick="hang_up(1);"&gt;End Call&lt;/button&gt; 
-   &lt;button onclick="record('sample');"&gt;Record &lt;/button&gt; 
 </code>
 </pre>
 
+<h2> Step 2: </h2>
 
 <ul>
     <li> Note 1: Below is an example usage of our HTTP based REST API. The example uses curl to try out our REST API. </li>
     <li> Note 2: PHP, Python, Ruby frameworks are very REST friendly. </li>
     <li> Note 3: All REST api respond with JSON data. </li>
-    <li> Note 4: Once you create a conference successfully, the conference id can be embedded in the javascript code which is embedded in your website. </li>
+    <li> Note 4: Once you create a virtual room successfully, the virtual room title can be embedded in the javascript code which is embedded in your website. </li>
 </ul>
 
 <pre>
@@ -96,9 +98,9 @@ curl https://oneklikstreet.com/api/v1/?format=json -v --user "username:api_key" 
 </pre>
 
 <h3>
-<a name="query-conferences" class="anchor" href="#query-conferences"><span class="octicon octicon-link"></span></a>Query all the conference id's created by a user name</h3>
+<a name="query-conferences" class="anchor" href="#query-conferences"><span class="octicon octicon-link"></span></a>Query all the virtual room id's created by a user name</h3>
 
-<p> A sample usage of querying conference id's created by the user using  <a href="http://curl.haxx.se/"> curl </a></p>
+<p> A sample usage of querying virtual room id's created by the user using  <a href="http://curl.haxx.se/"> curl </a></p>
 
 <pre>
 <code>
@@ -108,9 +110,9 @@ curl https://oneklikstreet.com/api/v1/conference/?format=json -v --user "usernam
 
 
 <h3>
-<a name="create-conference" class="anchor" href="#create-conference"><span class="octicon octicon-link"></span></a>Create a new conference</h3>
+<a name="create-conference" class="anchor" href="#create-conference"><span class="octicon octicon-link"></span></a>Create a new virtual room</h3>
 
-<p> A sample usage of creating a new conference id on 1Click.io  using <a href="http://curl.haxx.se/"> curl </a></p>
+<p> A sample usage of creating a new virtual room id on 1Click.io  using <a href="http://curl.haxx.se/"> curl </a></p>
 
 <pre>
 <code>

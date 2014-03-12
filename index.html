@@ -83,6 +83,7 @@
     <li> Note 4: Once you create a virtual room successfully, the virtual room title can be embedded in the javascript code which is embedded in your website. </li>
 </ul>
 
+<h3> API Authorization</h3>
 <pre>
 <code>
 Your username is registered_email_id@1click.io 
@@ -121,9 +122,15 @@ curl https://oneklikstreet.com/api/v1/conference/?format=json -v --user "usernam
 
 <pre>
 <code>
-curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "testroom", "scheduled_time":"2013-03-07 06:17:20.299877-06", "scheduled_duration":"60"}'   https://oneklikstreet.com/api/v1/conference/ --user "username:api_key" -v --digest
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60"}'   https://oneklikstreet.com/api/v1/conference/ --user "username:api_key" -v --digest
 </code>
 </pre>
+
+<ul>
+    <li> "title" is a string; It is unique across the 1Click.io service. The value of "title" needs to be embedded in the javascript. </li>
+    <li> "scheduled_time" is of the format Year-Month-Day Hr:Min:Sec. e.g. 2014-03-07 07:42:42. It is the time at which the virtual room will be available to join. </li>
+    <li> "scheduled_duration" is a positive integer. It is the duration for the which the virtual room remains active. </li>
+</ul>
 
 
 <h3>

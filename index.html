@@ -33,7 +33,7 @@
       </nav>
       <section>
         <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to 1Click.io API Page.</h3>
+<a name="welcome-to-1clickapi" class="anchor" href="#welcome-to-1clickapi"><span class="octicon octicon-link"></span></a>Welcome to 1Click.io API Page.</h3>
 
 <p>Easy steps to manage conferences using API and integrate our javascript in your website:
 
@@ -55,7 +55,7 @@ Your api key is contact_info_at_turtleyogi_to_get_your_api_key
 
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Query supported API on 1Click.io service</h3>
+<a name="query-api" class="anchor" href="#query-api"><span class="octicon octicon-link"></span></a>Query supported API on 1Click.io service</h3>
 
 <p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
 
@@ -66,24 +66,24 @@ curl https://oneklikstreet.com/api/v1/?format=json -v --user "username:api_key" 
 </pre>
 
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Query all the conference id's created by a user name</h3>
+<a name="query-conferences" class="anchor" href="#query-conferences"><span class="octicon octicon-link"></span></a>Query all the conference id's created by a user name</h3>
 
 <p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
 
 <pre>
 <code>
-curl https://oneklikstreet.com/api/v1/conference/?format=json -v --user "puran@interactivemedia.in:b24c40521002edada2376198864803ea89c5024b" --digest
+curl https://oneklikstreet.com/api/v1/conference/?format=json -v --user "username:api_key" --digest
 </code>
 </pre>
 
 
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Create a new conference</h3>
+<a name="create-conference" class="anchor" href="#create-conference"><span class="octicon octicon-link"></span></a>Create a new conference</h3>
 <p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
 
 <pre>
 <code>
-curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "room201", "scheduled_time":"2013-03-07 06:17:20.299877-06", "scheduled_duration":"60"}'   https://oneklikstreet.com/api/v1/conference/ --user "puran@interactivemedia.in:b24c40521002edada2376198864803ea89c5024b" -v --digest
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "testroom", "scheduled_time":"2013-03-07 06:17:20.299877-06", "scheduled_duration":"60"}'   https://oneklikstreet.com/api/v1/conference/ --user "username:api_key" -v --digest
 </code>
 </pre>
 

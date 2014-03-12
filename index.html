@@ -49,7 +49,8 @@
   &lt;script src="http://1click.io/static/js/adapter.js" type="text/javascript" &gt; &lt;/script &gt; 
   &lt;script src="http://1click.io/static/js/oks.js" type="text/javascript" &gt; &lt;/script &gt; 
   &lt;script &gt; 
-    var identity = "your_virtual_room";      //The virtual room. This room should be allocated using the REST API documented below  
+    //The virtual room. This room should be allocated using the REST API documented below 
+    var identity = "your_virtual_room";  
   &lt;/script &gt; 
 </code>
 </pre>
@@ -60,10 +61,10 @@
 
 <pre>
 <code>
-   <video id="remoteView" autoplay></video> 
-   <button onclick="video_call();">Start Call</button> 
-   <button onclick="hang_up(1);">End Call</button> 
-   <button onclick="record('sample');">Record </button> 
+   &lt;video id="remoteView" autoplay&gt; &lt;/video&gt; 
+   &lt;button onclick="video_call();"&gt;Start Call&lt;/button&gt; 
+   &lt;button onclick="hang_up(1);"&gt;End Call&lt;/button&gt; 
+   &lt;button onclick="record('sample');"&gt;Record &lt;/button&gt; 
 </code>
 </pre>
 

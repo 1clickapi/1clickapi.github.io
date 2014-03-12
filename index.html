@@ -24,7 +24,7 @@
       <div id="banner">
         <span id="logo"></span>
 
-        <a href="https://github.com/1clickapi" class="button fork"><strong>View On GitHub</strong></a>
+        <a href="http://1click.io" class="button fork"><strong>Try our service at 1Click.io</strong></a>
       </div><!-- end banner -->
 
     <div class="wrapper">
@@ -47,33 +47,51 @@
 <pre>
 <code>
 Your username is registered_email_id@1click.io 
-Your api key is test_api_key_contact_info_at_turtleyogi_com
+Your api key is contact_info_at_turtleyogi_to_get_your_api_key
 </code>
 </pre>
 </p>
 
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
 <h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
+<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Query supported API on 1Click.io service</h3>
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
+<p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
+
+<pre>
+<code>
+curl https://oneklikstreet.com/api/v1/?format=json -v --user "username:api_key" --digest
+</code>
+</pre>
 
 <h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
+<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Query all the conference id's created by a user name</h3>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
+<p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
+
+<pre>
+<code>
+curl https://oneklikstreet.com/api/v1/conference/?format=json -v --user "puran@interactivemedia.in:b24c40521002edada2376198864803ea89c5024b" --digest
+</code>
+</pre>
+
 
 <h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Create a new conference</h3>
+<p> A sample usage of querying 1Click.io for supported REST api  <a href="http://curl.haxx.se/"> curl </a></p>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+<pre>
+<code>
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "room201", "scheduled_time":"2013-03-07 06:17:20.299877-06", "scheduled_duration":"60"}'   https://oneklikstreet.com/api/v1/conference/ --user "puran@interactivemedia.in:b24c40521002edada2376198864803ea89c5024b" -v --digest
+</code>
+</pre>
+
 
 <h3>
 <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
+<p>Having trouble with API?  contact <a href="mailto:info@turtleyogi.com">info@turtleyogi.com</a> and we’ll help you sort it out.</p>
       </section>
       <footer>
         <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>

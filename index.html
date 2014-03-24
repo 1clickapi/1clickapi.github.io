@@ -46,9 +46,9 @@
 <p> Put this snippet in the html head section </p>
 <pre>
 <code>
-  &lt;script src="http://1click.io/static/js/jquery.min.js" type="text/javascript"&gt; &lt;/script &gt; 
-  &lt;script src="http://1click.io/static/js/adapter.js" type="text/javascript" &gt; &lt;/script &gt; 
-  &lt;script src="http://1click.io/static/js/oks.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://1click.io/static/js/jquery.min.js" type="text/javascript"&gt; &lt;/script &gt; 
+  &lt;script src="https://1click.io/static/js/adapter.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://1click.io/static/js/oks.js" type="text/javascript" &gt; &lt;/script &gt; 
   &lt;script &gt; 
     //The virtual room title. This room is allocated using the REST API documented below.
     var identity = "virtual_room_title";  
@@ -121,7 +121,7 @@ curl https://1click.io/api/v1/conference/?format=json -v --user "username:api_ke
 
 <pre>
 <code>
-curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60"}'   https://1click.io/api/v1/conference/ --user "username:api_key" -v --digest
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60", "layout":"dynamic"}'   https://1click.io/api/v1/conference/ --user "username:api_key" -v --digest
 </code>
 </pre>
 

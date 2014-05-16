@@ -149,7 +149,7 @@ curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v 
 </ul>
 
 <h2> Javascript API </h2>
-
+<h3> 1</h3>
 <pre>
 <code>
 send_register()
@@ -157,8 +157,128 @@ send_register()
 </pre>
 
 <ul>
- Invoke send_register to ensure calls start. This is the first function
- to be invoked before calling video_call or voice_call
+ <li>Invoke send_register to ensure calls start. This is the first function
+ to be invoked before calling video_call or voice_call</li>
+</ul>
+
+<h3> 2</h3>
+<pre>
+<code>
+video_call()
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to start a video call.
+ send_register should been invoked the first time the js is loaded
+ to ensure call succeeds.
+</li>
+</ul>
+
+<h3> 3</h3>
+<pre>
+<code>
+voice_call()
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to start a voice call.
+ send_register should been invoked the first time the js is loaded
+ to ensure call succeeds.
+</li>
+</ul>
+
+<h3> 4</h3>
+<pre>
+<code>
+audience_call()
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to start a voice two way call and video receive only.
+ send_register should been invoked the first time the js is loaded
+ to ensure call succeeds.
+
+</li>
+</ul>
+
+<h3> 5</h3>
+<pre>
+<code>
+listener_call()
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to start a voice and video receive only.
+ send_register should been invoked the first time the js is loaded
+ to ensure call succeeds.
+</li>
+</ul>
+
+<h3> 6</h3>
+<pre>
+<code>
+record()
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to record the call. The video/voice call has to be active
+ before you call record. pass "record_name" to name this recording file.
+</li>
+</ul>
+
+<h3> 7</h3>
+<pre>
+<code>
+hang_up(full)
+</code>
+</pre>
+
+<ul>
+<li>
+ Invoke this function to hangup the call.
+ hangup with full == 2, will end the entire conference and disconnect all the participants
+ invoke with full == 2 only for the admin
+ hangup with full == 0 or full == 1, will disconnect the individual participant
+</li>
+</ul>
+
+<h3> 8</h3>
+<pre>
+<code>
+toggleAudioMute()
+</code>
+</pre>
+
+<ul>
+<li>
+ Mute/unMute audio.  This function will stop the participant from sharing own voice.
+ This will turn on/off the speaker. This function controls the microphone.
+</li>
+</ul>
+
+<h3> 9</h3>
+<pre>
+<code>
+toggleVideoMute()
+</code>
+</pre>
+
+<ul>
+<li>
+ Mute/unMute video. Muting the video will freeze the self video on the screen.
+ This function will stop the participant from sharing own video.
+
+</li>
 </ul>
 
 

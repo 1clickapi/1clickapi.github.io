@@ -134,8 +134,7 @@ curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST 
     <li> "scheduled_duration" is a positive integer. It is the duration for the which the virtual room remains active. </li>
 </ul>
 
-<h3>
-<a name="query-conference" class="anchor" href="#create-conference"><span class="octicon octicon-link"></span></a>Query a live virtual room</h3>
+<h3> <a name="query-conference" class="anchor" href="#create-conference"><span class="octicon octicon-link"></span></a>Query a live virtual room</h3>
 
 <p> A sample usage of querying a live virtual room id on 1Click.io  using <a href="http://curl.haxx.se/"> curl </a></p>
 
@@ -149,9 +148,21 @@ curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v 
     <li> "title" is a string; It is unique across the 1Click.io service. The value of "title" is the given during creation of virtual room. </li>
 </ul>
 
+<h2> Javascript API </h2>
 
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+<pre>
+<code>
+send_register()
+</code>
+</pre>
+
+<ul>
+ Invoke send_register to ensure calls start. This is the first function
+ to be invoked before calling video_call or voice_call
+</ul>
+
+
+<h3> <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with API?  contact <a href="mailto:info@turtleyogi.com">info@turtleyogi.com</a> and we’ll help you sort it out.</p>
       </section>

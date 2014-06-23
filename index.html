@@ -85,7 +85,7 @@
 <h3> API Authorization</h3>
 <pre>
 <code>
-To find out username and api key 
+To find out username, which is the email, and api key 
     a. Login to 1Click.io at https://1click.io/webdash/#/login
     b. Click on the Profile icon and go to User profile for details 
 
@@ -101,7 +101,7 @@ If you need further help, contact <a href="mailto:info@turtleyogi.com">info@turt
 
 <pre>
 <code>
-curl https://1click.io/api/v1/?format=json -v --user "username:api_key" --digest
+curl https://1click.io/api/v1/?format=json -v --user "email:api_key" --digest
 </code>
 </pre>
 
@@ -112,7 +112,7 @@ curl https://1click.io/api/v1/?format=json -v --user "username:api_key" --digest
 
 <pre>
 <code>
-curl https://1click.io/api/v1/conference/?format=json -v --user "username:api_key" --digest
+curl https://1click.io/api/v1/conference/?format=json -v --user "email:api_key" --digest
 </code>
 </pre>
 
@@ -124,7 +124,7 @@ curl https://1click.io/api/v1/conference/?format=json -v --user "username:api_ke
 
 <pre>
 <code>
-curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60", "layout":"dynamic"}'   https://1click.io/api/v1/conference/ --user "username:api_key" -v --digest
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60", "layout":"dynamic"}'   https://1click.io/api/v1/conference/ --user "email:api_key" -v --digest
 </code>
 </pre>
 
@@ -140,7 +140,37 @@ curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST 
 
 <pre>
 <code>
-curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v --user "username:api_key" --digest
+curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v --user "email:api_key" --digest
+</code>
+</pre>
+
+<ul>
+    <li> "title" is a string; It is unique across the 1Click.io service. The value of "title" is the given during creation of virtual room. </li>
+</ul>
+
+<h2> New additions to API. part of APIv2 offering. Activate/deactivate a conference room through API to manage and better control the room usage. </h2>
+
+<h3> <a name="inactive-conference" class="anchor" href="#inactive-conference"><span class="octicon octicon-link"></span></a>De-activate a virtual room</h3>
+
+<p> Once conference is made inactive, it's unusable untill made active. A sample usage of deactivating a virtual room id on 1Click.io  using <a href="http://curl.haxx.se/"> curl </a></p>
+
+<pre>
+<code>
+curl https://1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": false}' -H "Content-Type: application/json" 
+</code>
+</pre>
+
+<ul>
+    <li> "title" is a string; It is unique across the 1Click.io service. The value of "title" is the given during creation of virtual room. </li>
+</ul>
+
+<h3> <a name="active-conference" class="anchor" href="#active-conference"><span class="octicon octicon-link"></span></a>Activate a virtual room</h3>
+
+<p> Inactive conference can be made active. A sample usage of activating a virtual room id on 1Click.io  using <a href="http://curl.haxx.se/"> curl </a></p>
+
+<pre>
+<code>
+curl https://1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": true}' -H "Content-Type: application/json" 
 </code>
 </pre>
 

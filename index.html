@@ -346,6 +346,21 @@ Screen sharing supported only with audio + shared screen, no participant video.
 </li>
 
 </ul>
+To enable screen sharing,
+1) Put following code in head section of HTML.
+<pre>
+<code>
+   &lt;link rel="chrome-webstore-item"&gt;
+</code>
+</pre>
+
+2) Put following code in body section of HTML. This will create a button for start screen sharing and video element to show shared screen.
+<pre>
+<code>
+    &lt;button onclick="screen_share();"&gt; Screen Share &lt;/button&gt;
+    &lt;video id="screenView" muted autoplay&gt; &lt;/video&gt;
+</code>
+</pre>
 
 
 <h3> <a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>

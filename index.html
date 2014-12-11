@@ -39,28 +39,55 @@
 <p>Easy steps to manage 1Click.io virtual rooms using API and integrate our javascript in your website:
 </p>
 
-<h2> Step 1 </h2>
+<h2> 3 Steps to include video calling to your website.</h2>
 <h4> <a name="js-snippet" class="anchor" href="#js-snippet"><span class="octicon octicon-link"></span></a>Javascript to be embedded in your workflow or website </h4>
 
-<h3> Step 1a </h3>
-<p> Put this snippet in the html head section </p>
+<h3> Step 1 </h3>
+<p> Including the required library, put this snippet in the html head section </p>
 <pre>
 <code>
-  &lt;script src="https://1click.io/static/js/jquery.min.js" type="text/javascript"&gt; &lt;/script &gt; 
-  &lt;script src="https://1click.io/static/js/adapter.js" type="text/javascript" &gt; &lt;/script &gt; 
-  &lt;script src="https://1click.io/static/js/oks_v1.1.min.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://1click.io/static/js/adapter_v1.0.min.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://1click.io/static/js/oks_v1.2.min.js" type="text/javascript" &gt; &lt;/script &gt; 
+</code>
+</pre>
+<br/>
+<br/>
+<h3> Step 2 </h3>
+<p> Assigning a room and handling video size, put this snippet in the html head section </p>
+<pre>
+<code>
   &lt;script &gt; 
     //The virtual room title. This room is allocated using the REST API documented below.
-    var identity = "virtual_room_title";  
+    var identity = "virtual_room_title";
+    function oneclickOnVideoAttach(element){
+        // USAGE : Callback for video resize.
+        // Here Application can resize the video rendered.
+        //
+        // ARGUMENT :
+        // element - &lt;video&gt; or &lt;object&gt; HTML element to which video attached.
+        //
+        // Primarily, on IE and Safari video are rendered in
+        // HTML &lt;object&gt; element, which might need resize or repositioning.
+        // webrtcDetectedBrowser is a global variable with values
+        // ['chrome', 'firefox', 'opera', 'safari', 'IE']
+        if(element) {
+            if(webrtcDetectedBrowser == 'safari' || webrtcDetectedBrowser == 'IE') {
+                element.style.display = 'block';
+                element.style.margin = 'auto';
+                element.width = '640px';
+                element.height = '480px';
+            }
+        }
+    }
+
   &lt;/script &gt; 
 </code>
 </pre>
-
 </br>
 </br>
 
-<h3> Step 1b </h3>
-<p> Put this snippet in the html body section </p>
+<h3> Step 3 </h3>
+<p> Creating Start Call and End Call button, put this snippet in the html body section </p>
 
 <pre>
 <code>
@@ -74,7 +101,7 @@
 </br>
 </br>
 
-<h2> Step 2 </h2>
+<h2> Creating and Managing your own 1Click room.</h2>
 
 <ul>
     <li> Note 1: Below is an example usage of our HTTP based REST API. The example uses curl to try out our REST API. </li>
@@ -328,10 +355,13 @@ http://stackoverflow.com/questions/6376450/how-to-mute-an-html5-video-player
 
 <h2> Screen Sharing in a 1Click call </h2>
 <h3> Notes </h3>
-<p> Screen sharing is supported via a Chrome extension. The extension is available in Chrome store for free: Click on this link to activate <a href="https://chrome.google.com/webstore/detail/1clickio/eblgnkmnffdmahhhajfefogdpecehank"> 1Click Screen Sharing Chrome Extension </a> </p>
+<p>
+Screen sharing is supported in Chrome35+, FireFox33+. However, shared screen can be viewed in Chome, Firefox, Opera, Internet Explorer and Safari.<br/>
+The Chrome extension is available in Chrome store for free: Click on this link to activate <a href="https://chrome.google.com/webstore/detail/1clickio/eblgnkmnffdmahhhajfefogdpecehank"> 1Click Screen Sharing Chrome Extension </a><br/>
+The Firefox addon is available in Mozilla store for free: Click on this link to activate <a href="https://addons.mozilla.org/en-US/firefox/addon/screensharing-for-1click-io/"> 1Click Screen Sharing Firefox Addon </a> </p>
 <ul>
 <li>
-If browser doesn't have it javascript throws an alert with installation steps.  It will be one time installation.
+If browser doesn't have extension/add-on javascript throws an alert with installation steps.  It will be one time installation.
 </li>
 <li>
 Screen sharing only supported when participant in the call.
@@ -339,10 +369,6 @@ Screen sharing only supported when participant in the call.
 
 <li>
 Screen sharing supported only on chrome browser with HTTPS connection.
-</li>
-
-<li>
-Screen sharing supported only with audio + shared screen, no participant video.
 </li>
 
 </ul>
@@ -358,7 +384,8 @@ To enable screen sharing,<br/>
 <pre>
 <code>
     &lt;button onclick="screen_share();"&gt; Screen Share &lt;/button&gt;
-    &lt;video id="screenView" muted autoplay&gt; &lt;/video&gt;
+    &lt;video id="screenRemoteView" muted autoplay&gt; &lt;/video&gt;
+    &lt;video id="screenLocalView" muted autoplay&gt; &lt;/video&gt;
 </code>
 </pre>
 

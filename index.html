@@ -46,8 +46,8 @@
 <p> Including the required library, put this snippet in the html head section </p>
 <pre>
 <code>
-  &lt;script src="https://1click.io/static/js/adapter_v1.0.min.js" type="text/javascript" &gt; &lt;/script &gt; 
-  &lt;script src="https://1click.io/static/js/oks_v1.2.min.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://api.1click.io/static/js/adapter_v1.0.min.js" type="text/javascript" &gt; &lt;/script &gt; 
+  &lt;script src="https://api.1click.io/static/js/oks_v1.2.min.js" type="text/javascript" &gt; &lt;/script &gt; 
 </code>
 </pre>
 <br/>
@@ -129,7 +129,7 @@ If you need further help, contact <a href="mailto:info@turtleyogi.com">info@turt
 
 <pre>
 <code>
-curl https://1click.io/api/v1/?format=json -v --user "email:api_key" --digest
+curl https://api.1click.io/api/v1/?format=json -v --user "email:api_key" --digest
 </code>
 </pre>
 
@@ -140,7 +140,7 @@ curl https://1click.io/api/v1/?format=json -v --user "email:api_key" --digest
 
 <pre>
 <code>
-curl https://1click.io/api/v1/conference/?format=json -v --user "email:api_key" --digest
+curl https://api.1click.io/api/v1/conference/?format=json -v --user "email:api_key" --digest
 </code>
 </pre>
 
@@ -152,7 +152,7 @@ curl https://1click.io/api/v1/conference/?format=json -v --user "email:api_key" 
 
 <pre>
 <code>
-curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60", "layout":"dynamic", "bitrate": 256}'   https://1click.io/api/v1/conference/ --user "email:api_key" -v --digest
+curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST -d '{"title": "virtual_room_title", "scheduled_time":"2013-03-07 06:17:20", "scheduled_duration":"60", "layout":"dynamic", "bitrate": 256}'   https://api.1click.io/api/v1/conference/ --user "email:api_key" -v --digest
 </code>
 </pre>
 
@@ -168,7 +168,7 @@ curl  -H "Accept: application/json" -H "Content-Type: application/json" -X POST 
 
 <pre>
 <code>
-curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v --user "email:api_key" --digest
+curl https://api.1click.io/api/v1/live_call/"conference_room_title"/?format=json -v --user "email:api_key" --digest
 </code>
 </pre>
 
@@ -185,7 +185,7 @@ curl https://1click.io/api/v1/live_call/"conference_room_title"/?format=json -v 
 
 <pre>
 <code>
-curl https://1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": false}' -H "Content-Type: application/json" 
+curl https://api.1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": false}' -H "Content-Type: application/json" 
 </code>
 </pre>
 
@@ -199,7 +199,7 @@ curl https://1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:
 
 <pre>
 <code>
-curl https://1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": true}' -H "Content-Type: application/json" 
+curl https://api.1click.io/api/v2/conference/active/ -H "Authorization:ApiKey email:api_key"  --digest -X POST -d '{"title": "virtual_room_title", "active": true}' -H "Content-Type: application/json" 
 </code>
 </pre>
 
